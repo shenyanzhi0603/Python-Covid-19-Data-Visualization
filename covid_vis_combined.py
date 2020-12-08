@@ -489,7 +489,7 @@ app.layout = html.Div([
     #add the bar chart
     html.Div([
         html.Div([
-            html.H3("Top States Ranking of the Cummulated Comfirmed Cases", style={'textAlign':'center'})
+            html.H3("Top States Ranking of the Cumulative Confirmed/Death Cases", style={'textAlign':'center'})
         ]),
         dcc.Graph(id="bar_chart_confirmed", figure=fig_bar_confirmed, style={'width':'48%', 'height':650, 'margin': "1%",'display':'inline-block'}),
         dcc.Graph(id="bar_chart_deaths", figure=fig_bar_deaths, style={'width':'48%', 'height':650, 'margin': "1%",'display':'inline-block'})
@@ -559,7 +559,7 @@ def update_figure(selected_date_id, btn1, btn2, btn3, btn4, n):
         hover_name = "state", # column to add to hover information
         color_continuous_scale=px.colors.sequential.Reds if button_id!='btn_recovered' else px.colors.sequential.Blues,
         labels = { button_id_dict[button_id] : '{} Number'.format(button_id_dict[button_id])},
-        title = 'Date "'+begin_to_end_dates[selected_date_id]+'" - US Overview of Cumulated Cases by State'
+        title = 'Date "'+begin_to_end_dates[selected_date_id]+'" - US Overview of Cumulative Cases by State'
     )
     fig.update_layout(
         font=dict(
